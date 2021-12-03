@@ -30,11 +30,11 @@ const Searchbar = () => {
         <Form.Group>
          
           <Form.Text>
-           See World Wide Weather Forcast
+           See World Wide Weather
           </Form.Text>
           <Form.Control
             type="search"
-            placeholder="type city => press enter"
+            placeholder="location..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
