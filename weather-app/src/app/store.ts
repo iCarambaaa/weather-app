@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-
+import { encryptTransform } from 'redux-persist-transform-encrypt';
 import currentWeatherReducer from '../features/currentWeather/currentWeatherSlice';
 import {
   persistStore,
@@ -13,11 +13,18 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 
+let key = process.env.REACT_APP_REDUX_LOCAL_STORAGE_KEY 
 
 const persistConfig = {
   key: 'root',
   version: 1,
   storage,
+  transforms: [
+    encryptTransform(
+    {
+        secretKey: key || "help"
+    }
+    )]
 }
 
 
