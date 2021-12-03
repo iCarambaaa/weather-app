@@ -1,48 +1,35 @@
 import { Form, Container } from "react-bootstrap";
 import { FormEvent, useState } from "react";
-import { useAppSelector, useAppDispatch } from '../app/hooks';
-
+import { useAppDispatch } from '../app/hooks';
+import  APICALL  from "../features/currentWeather/APICALL";
+import currentWeather from "../interfaces/currentWeather"
+import { setCurrentWeather } from "../features/currentWeather/currentWeatherSlice";
 
 
 
 const Searchbar = () => {
 
-    const apikey = process.env.REACT_APP_WEATHER_API
+
 
     const [query, setQuery] = useState("");
-    
-    const baseEndpoint = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apikey}`;
-    console.log(baseEndpoint)
+    const dispatch = useAppDispatch()
   
     
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        
-        try {
-            const response = await fetch(baseEndpoint);
-            if (!response.ok) {
-                alert("Error fetching results");
-                return;
-            }
-            const  data  = await response.json();
-            
-            console.log(data);
-            
-            //   setSongs(data)
-            
-        } catch (error) {
-            console.log(error);
-    }
 
-    
+        let data: currentWeather = await APICALL(query)
+        //console.log(query);
+        dispatch(setCurrentWeather(data))
+        
   };
 
   return (
-    <Container fluid className="d-flex justify-content-center py-5">
-      <Form onSubmit={handleSubmit} className="p-5">
+    <Container fluid className="d-flex justify-content-center p-5">
+      <Form onSubmit={handleSubmit} className="mx-5">
         <Form.Group>
-          {/* <Form.Label>Search & Find</Form.Label> */}
-          <Form.Text className="text-muted">
+         
+          <Form.Text>
            See World Wide Weather Forcast
           </Form.Text>
           <Form.Control
