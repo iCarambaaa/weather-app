@@ -18,7 +18,6 @@ const DisplayWeather = ( ) => {
     <div className="container">
         <div className="row container-fluid d-flex justify-content-center">
             <div className="col-lg-12  stretch-card">
-              {/* <!--weather card--> */}
                 <div className="card card-weather">
                     <div className="card-body">
                         <div className="weather-date-location">
@@ -32,40 +31,7 @@ const DisplayWeather = ( ) => {
                             </div>
                         </div>
                     </div>
-                    {/* <div className="card-body p-0">
-                        <div className="d-flex weakly-weather">
-                            <div className="weakly-weather-item">
-                                <p className="mb-0"> Sun </p> <i className="mdi mdi-weather-cloudy"></i>
-                                <p className="mb-0"> 30° </p>
-                            </div>
-                            <div className="weakly-weather-item">
-                                <p className="mb-1"> Mon </p> <i className="mdi mdi-weather-hail"></i>
-                                <p className="mb-0"> 31° </p>
-                            </div>
-                            <div className="weakly-weather-item">
-                                <p className="mb-1"> Tue </p> <i className="mdi mdi-weather-partlycloudy"></i>
-                                <p className="mb-0"> 28° </p>
-                            </div>
-                            <div className="weakly-weather-item">
-                                <p className="mb-1"> Wed </p> <i className="mdi mdi-weather-pouring"></i>
-                                <p className="mb-0"> 30° </p>
-                            </div>
-                            <div className="weakly-weather-item">
-                                <p className="mb-1"> Thu </p> <i className="mdi mdi-weather-pouring"></i>
-                                <p className="mb-0"> 29° </p>
-                            </div>
-                            <div className="weakly-weather-item">
-                                <p className="mb-1"> Fri </p> <i className="mdi mdi-weather-snowy-rainy"></i>
-                                <p className="mb-0"> 31° </p>
-                            </div>
-                            <div className="weakly-weather-item">
-                                <p className="mb-1"> Sat </p> <i className="mdi mdi-weather-snowy"></i>
-                                <p className="mb-0"> 32° </p>
-                            </div>
-                        </div>
-                    </div> */}
                 </div>
-                {/* <!--weather card ends--> */}
             </div>
         </div>
     </div>
