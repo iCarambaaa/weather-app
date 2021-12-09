@@ -22,7 +22,7 @@ const persistConfig = {
   transforms: [
     encryptTransform(
     {
-        secretKey: key || "help"
+        secretKey: key! //! asserts it will be a string not undefined nor null
     }
     )]
 }
